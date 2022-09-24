@@ -9,7 +9,7 @@ pipeline {
         }
         stage('Create Directory Ripon') {
             steps {
-                bat 'mkdir Ripon'
+                bat 'mkdir %Folder Name%'
                 echo 'Directory Created'
             }
         }
