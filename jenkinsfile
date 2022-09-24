@@ -13,9 +13,14 @@ pipeline {
                 echo 'Directory Created'
             }
         }
-        stage('Good Bye') {
+        stage('Create File') {
             steps {
-                echo 'Bye Bye !'
+                bat '"Hhhh hhh hhh ">test.log'
+            }
+        }
+        stage('Delete Directory') {
+            steps {
+                
             }
         }
     }
