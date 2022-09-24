@@ -7,10 +7,10 @@ pipeline {
                 echo 'Hello World'
             }
         }
-        stage('Create Directory %Folder Name%') {
+        stage('Create Directory') {
             steps {
                 bat 'mkdir %Folder Name%'
-                echo 'Directory Created'
+                echo 'Directory Created namely %Folder Name%'
             }
         }
         stage('Run Java Programme'){
