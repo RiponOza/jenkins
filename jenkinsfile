@@ -13,6 +13,12 @@ pipeline {
                 echo 'Directory Created'
             }
         }
+        stage('Run Java Programme'){
+            steps {
+                bat 'javac HelloWorld.java'
+                bat 'java HelloWorld'
+            }
+        }
         stage('Good Bye') {
             steps {
                 echo 'Bye Bye !'
