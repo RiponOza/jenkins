@@ -21,7 +21,6 @@ pipeline {
         }
         stage('Delete Folder Good Bye') {
             steps {
-                bat 'Del Ripon'
                 echo 'Folder Deleted Successfully. Bye Bye !'
             }
         }
