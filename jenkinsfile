@@ -19,9 +19,10 @@ pipeline {
                 bat 'java HelloWorld'
             }
         }
-        stage('Good Bye') {
+        stage('Delete Folder Good Bye') {
             steps {
-                echo 'Bye Bye !'
+                bat 'Del Ripon'
+                echo 'Folder Deleted Successfully. Bye Bye !'
             }
         }
     }
