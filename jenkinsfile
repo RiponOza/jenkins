@@ -1,0 +1,22 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Hello') {
+            steps {
+                echo 'Hello World'
+            }
+        }
+        stage('Create Directory Ripon') {
+            steps {
+                bat 'mkdir Ripon'
+                echo 'Directory Created'
+            }
+        }
+        stage('Good Bye') {
+            steps {
+                echo 'Bye Bye !'
+            }
+        }
+    }
+}
