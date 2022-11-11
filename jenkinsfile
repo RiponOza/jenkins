@@ -1,28 +1,28 @@
-pipeline {
-    agent any
-
-    stages {
-        stage('Hello') {
-            steps {
-                echo 'Hello World'
-            }
+node{
+        stage('Create folder') {
+                sh '''
+                cd /root/
+                mkdir ${env.folder_name}
+                cd ${env.folder_name}
+                touch README
+                '''
+                echo 'Folder ${env.folder_name} is created.'
+                echo 'README is created.'
         }
-        stage('Create Directory') {
-            steps {
-                bat 'mkdir %Folder Name%'
-                echo 'Directory Created namely %Folder Name%'
-            }
+        stage('Wait for 30 sec'){
+                echo 'Enter into sleep mode !'
+                sh'''
+                sleep 30
+                '''
+                echo 'Exiting sleep mode !'
         }
-        stage('Run Java Programme'){
-            steps {
-                bat 'javac HelloWorld.java'
-                bat 'java HelloWorld'
-            }
-        }
-        stage('Delete Folder Good Bye') {
-            steps {
-                echo 'Folder Deleted Successfully. Bye Bye !'
-            }
+        stage('Deleting created folder'){
+            sh'''
+            cd /root/
+            rm -r ${env.folder_name}
+            '''
+            echo 'Dir ${env.folder_name} is deleted.'
+            echo 'Good Bye!'
         }
     }
-}
+
