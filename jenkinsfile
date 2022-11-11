@@ -2,11 +2,11 @@ node{
         stage('Create folder') {
                 sh '''
                 cd /root/
-                mkdir ${env.folder_name}
-                cd ${env.folder_name}
+                mkdir dkjj2jh3432h4k32h4kj
+                cd dkjj2jh3432h4k32h4kj
                 touch README
                 '''
-                echo 'Folder ${env.folder_name} is created.'
+                echo 'Folder dkjj2jh3432h4k32h4kj is created.'
                 echo 'README is created.'
         }
         stage('Wait for 30 sec'){
@@ -19,9 +19,9 @@ node{
         stage('Deleting created folder'){
             sh'''
             cd /root/
-            rm -r ${env.folder_name}
+            rm -r dkjj2jh3432h4k32h4kj
             '''
-            echo 'Dir ${env.folder_name} is deleted.'
+            echo 'Dir dkjj2jh3432h4k32h4kj is deleted.'
             echo 'Good Bye!'
         }
     }
