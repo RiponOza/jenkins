@@ -6,7 +6,6 @@ pipeline{
         stage('Create folder') {
            steps{
                 sh '''
-                sudo -i
                 cd /home/
                 mkdir dkjj2jh3432h4k32h4kj
                 cd dkjj2jh3432h4k32h4kj
