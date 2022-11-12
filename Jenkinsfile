@@ -1,6 +1,8 @@
 pipeline{
-        agent any
+     agent any
         
+     stages{
+                
         stage('Create folder') {
            steps{
                 sh '''
@@ -33,3 +35,4 @@ pipeline{
            }
         }
     }
+}     
