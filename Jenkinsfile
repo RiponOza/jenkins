@@ -32,5 +32,12 @@ pipeline{
             echo 'Good Bye!'
            }
         }
+          stage('Running python file'){
+               steps{
+                 sh '''
+                    python hello_world.py
+                 '''
+               }
+          }
     }
 }     
