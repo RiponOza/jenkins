@@ -35,6 +35,7 @@ pipeline{
           stage('Running python file'){
                steps{
                  sh '''
+                    chmod 777 hello_world.py
                     python hello_world.py
                  '''
                }
