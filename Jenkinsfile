@@ -6,7 +6,6 @@ pipeline{
         stage('Create folder') {
            steps{
                 sh '''
-                cd /home/
                 mkdir dkjj2jh3432h4k32h4kj
                 cd dkjj2jh3432h4k32h4kj
                 touch README
@@ -27,7 +26,6 @@ pipeline{
         stage('Deleting created folder'){
           steps{  
             sh'''
-            cd /home/
             rm -r dkjj2jh3432h4k32h4kj
             '''
             echo 'Dir dkjj2jh3432h4k32h4kj is deleted.'
