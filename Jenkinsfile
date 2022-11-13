@@ -10,7 +10,7 @@ pipeline{
                 
         stage('Create folder') {
            steps{
-                echo 'Parameter : ${params.folder_name}'
+                echo 'Parameter :' ${params.folder_name}
                 sh '''
                 mkdir dkjj2jh3432h4k32h4kj
                 cd dkjj2jh3432h4k32h4kj
