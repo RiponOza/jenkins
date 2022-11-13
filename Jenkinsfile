@@ -1,10 +1,16 @@
 pipeline{
+     
+     parameters{
+          string(name:'folder_name', defaultValue:'default-folder', description:'This is the name of the folder that will be created.')
+     }
+     
      agent any
         
      stages{
                 
         stage('Create folder') {
            steps{
+                echo 'Parameter : ${params.folder_name}'
                 sh '''
                 mkdir dkjj2jh3432h4k32h4kj
                 cd dkjj2jh3432h4k32h4kj
