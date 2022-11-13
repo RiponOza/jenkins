@@ -11,8 +11,8 @@ pipeline{
         stage('Create folder') {
            steps{
                 sh '''
-                mkdir ${params.folder_name}
-                cd ${params.folder_name}
+                mkdir "${params.folder_name}"
+                cd "${params.folder_name}"
                 touch README
                 '''
                 echo 'Folder dkjj2jh3432h4k32h4kj is created.'
