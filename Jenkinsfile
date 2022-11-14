@@ -1,6 +1,7 @@
 #!/usr/bin/env groovy
 
 def FOLDER_NAME
+def MSG_OUTPUT
 
 
 pipeline{
@@ -49,6 +50,17 @@ pipeline{
                     chmod 777 hello_world.py
                     python hello_world.py
                  '''
+               }
+          }
+          
+          stage('Printing output from script'){
+               steps{
+                    script{
+                         MSG_OUTPUT = sh(
+                              script: "echo 'Value is 67889' "
+                         )
+                         echo """ Output is :===> ${MSG_OUTPUT} """
+                    }
                }
           }
     }
