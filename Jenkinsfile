@@ -8,7 +8,7 @@ pipeline{
      agent any
      
      environment{
-          FOLDER_NAME = "${params.REPO_NAME}"
+          FOLDER_NAME = "${REPO_NAME}"
      }
         
      stages{
@@ -37,9 +37,9 @@ pipeline{
         stage('Deleting created folder'){
           steps{  
             sh"""
-               rm -r ${FOLDER_NAME}
+               rm -r ${REPO_NAME}
             """
-            echo """Dir ${FOLDER_NAME} is deleted."""
+            echo """Dir ${REPO_NAME} is deleted."""
             echo 'Good Bye!'
            }
         }
