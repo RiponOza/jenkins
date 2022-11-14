@@ -1,7 +1,6 @@
 #!/usr/bin/env groovy
 
 def FOLDER_NAME
-def MSG_OUTPUT
 
 
 pipeline{
