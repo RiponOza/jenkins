@@ -1,22 +1,27 @@
+#!/usr/bin/env groovy
+
+def FOLDER_NAME
+
+
 pipeline{
      
-     parameters{
-          string(name:'folder_name', defaultValue:'default-folder', description:'This is the name of the folder that will be created.')
-     }
-     
      agent any
+     
+     environment{
+          FOLDER_NAME = "${params.folder_name}"
+     }
         
      stages{
                 
         stage('Create folder') {
            steps{
-                sh '''
-                mkdir "${params.folder_name}"
-                cd "${params.folder_name}"
-                touch README
-                '''
-                echo 'Folder dkjj2jh3432h4k32h4kj is created.'
-                echo 'README is created.'
+                sh """
+                    mkdir "${FOLDER_NAME}"
+                    cd "${FOLDER_NAME}"
+                    touch README
+                """
+                echo """Folder ${FOLDER_NAME} is created."""
+                echo "README is created."
                 }
         }
         stage('Wait for 30 sec'){
@@ -30,10 +35,10 @@ pipeline{
         }
         stage('Deleting created folder'){
           steps{  
-            sh'''
-            rm -r dkjj2jh3432h4k32h4kj
-            '''
-            echo 'Dir dkjj2jh3432h4k32h4kj is deleted.'
+            sh"""
+               rm -r ${FOLDER_NAME}
+            """
+            echo """Dir ${FOLDER_NAME} is deleted."""
             echo 'Good Bye!'
            }
         }
