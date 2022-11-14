@@ -25,11 +25,11 @@ pipeline{
                 echo "README is created."
                 }
         }
-        stage('Wait for 30 sec'){
+        stage('Wait for 5 sec'){
             steps{
                 echo 'Enter into sleep mode !'
                 sh'''
-                sleep 30
+                sleep 5
                 '''
                 echo 'Exiting sleep mode !'
                 }
@@ -58,8 +58,14 @@ pipeline{
                          def MSG_OUTPUT = sh(
                               script: "echo 'Value is 67889' "
                          )
-                         echo " Output is :===> ${env.MSG_OUTPUT} "
+                         echo " Output is :===> ${MSG_OUTPUT} "
                     }
+               }
+          }
+          
+          stage('Printing environment variables'){
+               steps{
+                    echo """ FOLDER_NAME = ${env.FOLDER_NAME} """
                }
           }
     }
