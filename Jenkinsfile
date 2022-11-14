@@ -15,14 +15,13 @@ pipeline{
                 
         stage('Create folder') {
            steps{
-                echo "${params.REPO_NAME}"
-                echo "${REPO_NAME}"
+               
                 sh """
-                    mkdir "${FOLDER_NAME}"
-                    cd "${FOLDER_NAME}"
+                    mkdir ${REPO_NAME}
+                    cd ${REPO_NAME}
                     touch README
                 """
-                echo """Folder ${FOLDER_NAME} is created."""
+                echo """Folder ${REPO_NAME} is created."""
                 echo "README is created."
                 }
         }
