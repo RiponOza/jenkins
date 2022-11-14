@@ -8,7 +8,7 @@ pipeline{
      agent any
      
      environment{
-          FOLDER_NAME = "${params.REPO_NAME}"
+          FOLDER_NAME = "${REPO_NAME}"
      }
         
      stages{
