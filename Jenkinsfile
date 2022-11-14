@@ -13,7 +13,8 @@ pipeline{
      }
         
      stages{
-                
+          
+          
         stage('Create folder') {
            steps{
                
@@ -26,6 +27,8 @@ pipeline{
                 echo "README is created."
                 }
         }
+          
+          
         stage('Wait for 5 sec'){
             steps{
                 echo 'Enter into sleep mode !'
@@ -35,6 +38,8 @@ pipeline{
                 echo 'Exiting sleep mode !'
                 }
         }
+          
+          
         stage('Deleting created folder'){
           steps{  
             sh"""
@@ -44,14 +49,17 @@ pipeline{
             echo 'Good Bye!'
            }
         }
-          stage('Running python file'){
+      
+          
+          stage('Running python file with command line args'){
                steps{
-                 sh '''
+                 sh """
                     chmod 777 hello_world.py
-                    python hello_world.py
-                 '''
+                    python hello_world.py ${FIRST_NAME} ${LAST_NAME}
+                 """
                }
           }
+          
           
           stage('Printing output from script'){
                steps{
@@ -65,6 +73,7 @@ pipeline{
                }
           }
           
+      
           stage('Printing environment variables'){
                steps{
                     echo """ FOLDER_NAME = ${env.FOLDER_NAME} """
