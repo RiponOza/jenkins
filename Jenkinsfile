@@ -8,13 +8,15 @@ pipeline{
      agent any
      
      environment{
-          FOLDER_NAME = "${REPO_NAME}"
+          FOLDER_NAME = "${params.REPO_NAME}"
      }
         
      stages{
                 
         stage('Create folder') {
            steps{
+                echo "${params.REPO_NAME}"
+                echo "${REPO_NAME}"
                 sh """
                     mkdir "${FOLDER_NAME}"
                     cd "${FOLDER_NAME}"
