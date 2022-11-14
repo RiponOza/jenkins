@@ -2,6 +2,7 @@
 
 def FOLDER_NAME
 def MSG_OUTPUT
+def PYTHON_FILE
 
 
 pipeline{
@@ -10,6 +11,7 @@ pipeline{
      
      environment{
           FOLDER_NAME = "${REPO_NAME}"
+          PYTHON_FILE = "hello_world.py"
      }
         
      stages{
@@ -55,7 +57,7 @@ pipeline{
                steps{
                  sh """
                     chmod 777 hello_world.py
-                    python hello_world.py ${FIRST_NAME} ${LAST_NAME}
+                    python ${env.PYTHON_FILE} ${FIRST_NAME} ${LAST_NAME}
                  """
                }
           }
