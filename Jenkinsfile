@@ -56,7 +56,8 @@ pipeline{
                steps{
                     script{
                          def MSG_OUTPUT = sh(
-                              script: "echo 'Value is 67889' "
+                              script: "echo 'Value is 67889' ",
+                              returnStdout: true
                          )
                          echo " Output is :===> ${MSG_OUTPUT} "
                     }
