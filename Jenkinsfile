@@ -1,6 +1,7 @@
 #!/usr/bin/env groovy
 
 def FOLDER_NAME
+def MSG_OUTPUT
 
 
 pipeline{
@@ -55,7 +56,7 @@ pipeline{
           stage('Printing output from script'){
                steps{
                     script{
-                         def MSG_OUTPUT = sh(
+                         MSG_OUTPUT = sh(
                               script: "echo 'Value is 67889' ",
                               returnStdout: true
                          )
