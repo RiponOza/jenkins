@@ -58,7 +58,7 @@ pipeline{
                          def MSG_OUTPUT = sh(
                               script: "echo 'Value is 67889' "
                          )
-                         echo " Output is :===> ${MSG_OUTPUT} "
+                         echo " Output is :===> ${env.MSG_OUTPUT} "
                     }
                }
           }
