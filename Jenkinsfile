@@ -76,6 +76,7 @@ pipeline{
                }
           }
           
+          /*
           stage('Running groovy if-else'){
                steps{
                     script{
@@ -88,7 +89,7 @@ pipeline{
                          }
                }
           }
-          
+          */
       
           stage('Printing environment variables'){
                steps{
