@@ -78,12 +78,14 @@ pipeline{
           
           stage('Running groovy if-else'){
                steps{
-                    if(${env.FLAG} > 0){
-                         echo "FLAG variable has positive value."
-                    }
-                    else{
-                         echo "FLAG variable has negative value."
-                    }
+                    script{
+                              if(${env.FLAG} > 0){
+                                   echo "FLAG variable has positive value."
+                              }
+                              else{
+                                   echo "FLAG variable has negative value."
+                              }
+                         }
                }
           }
           
