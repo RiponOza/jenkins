@@ -12,6 +12,7 @@ pipeline{
      environment{
           FOLDER_NAME = "${REPO_NAME}"
           PYTHON_FILE = "hello_world.py"
+          FLAG = 1
      }
         
      stages{
@@ -71,6 +72,17 @@ pipeline{
                               returnStdout: true
                          )
                          echo " Output is :===> ${MSG_OUTPUT} "
+                    }
+               }
+          }
+          
+          stage('Running groovy if-else'){
+               steps{
+                    if(${env.FLAG} > 0){
+                         echo "FLAG variable has positive value."
+                    }
+                    else{
+                         echo "FLAG variable has negative value."
                     }
                }
           }
