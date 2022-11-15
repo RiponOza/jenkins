@@ -84,12 +84,12 @@ pipeline{
           stage('Running groovy if-else'){
                steps{
                     script{
-                              if(params.FLAG > 0){
-                                   echo "FLAG variable has positive value."
+                              if(params.FLAG == true){
+                                   echo "FLAG variable has true value."
                                    return
                               }
                               else{
-                                   echo "FLAG variable has negative value."
+                                   echo "FLAG variable has false value."
                               }
                          }
                      }
