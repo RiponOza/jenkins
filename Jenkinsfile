@@ -13,7 +13,7 @@ pipeline{
      
      environment{
           FOLDER_NAME = "${REPO_NAME}"
-          PYTHON_FILE = "hello_world.py"
+          PYTHON_FILE = "python_files/hello_world.py"
           
      }
      
