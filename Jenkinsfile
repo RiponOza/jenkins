@@ -82,7 +82,7 @@ pipeline{
           }
           
           
-          stage('Running groovy if-else'){
+          stage('Running groovy if-else and loop'){
                steps{
                     script{
                               if(params.FLAG == true){
@@ -93,6 +93,11 @@ pipeline{
                                    echo "FLAG variable has false value."
                               }
                          }
+                    script{
+                         for(int i=0; i<10; i++){
+                              echo "I am repeating !"
+                         }
+                    }
                      }
           }
           
