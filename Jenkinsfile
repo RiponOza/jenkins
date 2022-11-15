@@ -76,20 +76,21 @@ pipeline{
                }
           }
           
-          /*
+          
           stage('Running groovy if-else'){
                steps{
                     script{
-                              if(${env.FLAG} > 0){
+                              if(env.FLAG > 0){
                                    echo "FLAG variable has positive value."
+                                   return
                               }
                               else{
                                    echo "FLAG variable has negative value."
                               }
                          }
-               }
+                     }
           }
-          */
+          
       
           stage('Printing environment variables'){
                steps{
