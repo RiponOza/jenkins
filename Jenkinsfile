@@ -63,7 +63,7 @@ pipeline{
           stage('Running python file with command line args'){
                steps{
                  sh """
-                    chmod 777 hello_world.py
+                    chmod 777 ${env.PYTHON_FILE}
                     python ${env.PYTHON_FILE} ${FIRST_NAME} ${LAST_NAME}
                  """
                }
