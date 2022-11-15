@@ -12,7 +12,11 @@ pipeline{
      environment{
           FOLDER_NAME = "${REPO_NAME}"
           PYTHON_FILE = "hello_world.py"
-          FLAG = 1
+          
+     }
+     
+     parameters{
+          booleanParam(defaultValue:false, description:"Set flag variable as True/False", name: "FLAG")
      }
         
      stages{
@@ -80,7 +84,7 @@ pipeline{
           stage('Running groovy if-else'){
                steps{
                     script{
-                              if(env.FLAG > 0){
+                              if(params.FLAG > 0){
                                    echo "FLAG variable has positive value."
                                    return
                               }
