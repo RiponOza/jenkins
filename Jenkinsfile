@@ -1,5 +1,5 @@
 #!/usr/bin/env groovy
-
+// git config file check
 
 def FOLDER_NAME
 def MSG_OUTPUT
